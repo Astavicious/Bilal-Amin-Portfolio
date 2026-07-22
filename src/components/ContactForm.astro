@@ -9,12 +9,49 @@ const { email } = Astro.props;
 ---
 
 <Section text="Contact" href="contact">
-  <form id="contact-form" data-recipient={email} class="mx-auto max-w-2xl">
+  <form
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    class="mx-auto max-w-2xl"
+  >
+    <!-- Web3Forms -->
+    <input
+      type="hidden"
+      name="access_key"
+      value="794a5153-918e-4fb2-b6ef-a254cc1fc562"
+    />
+
+    <input
+      type="hidden"
+      name="subject"
+      value="New Portfolio Message"
+    />
+
+    <input
+      type="hidden"
+      name="from_name"
+      value="Bilal Amin Portfolio"
+    />
+
+    <input
+      type="hidden"
+      name="redirect"
+      value="https://bilal-amin-portfolio.vercel.app"
+    />
+
+    <input
+      type="checkbox"
+      name="botcheck"
+      class="hidden"
+      style="display:none"
+    />
+
     <div class="grid gap-6 sm:grid-cols-2">
       <div class="flex flex-col gap-2">
         <label for="firstName" class="text-sm font-medium text-neutral">
           First Name <span class="text-primary">*</span>
         </label>
+
         <input
           type="text"
           id="firstName"
@@ -29,6 +66,7 @@ const { email } = Astro.props;
         <label for="lastName" class="text-sm font-medium text-neutral">
           Last Name <span class="text-primary">*</span>
         </label>
+
         <input
           type="text"
           id="lastName"
@@ -40,13 +78,14 @@ const { email } = Astro.props;
       </div>
 
       <div class="flex flex-col gap-2 sm:col-span-2">
-        <label for="senderEmail" class="text-sm font-medium text-neutral">
+        <label for="email" class="text-sm font-medium text-neutral">
           Your Email <span class="text-primary">*</span>
         </label>
+
         <input
           type="email"
-          id="senderEmail"
-          name="senderEmail"
+          id="email"
+          name="email"
           required
           placeholder="name@example.com"
           class="rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
@@ -58,6 +97,7 @@ const { email } = Astro.props;
       <label for="message" class="text-sm font-medium text-neutral">
         Message <span class="text-primary">*</span>
       </label>
+
       <textarea
         id="message"
         name="message"
@@ -73,7 +113,8 @@ const { email } = Astro.props;
         type="submit"
         class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-white transition-all hover:bg-primary/90 active:scale-95"
       >
-        Create Email
+        Send Message
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -85,39 +126,10 @@ const { email } = Astro.props;
           stroke-linecap="round"
           stroke-linejoin="round"
         >
-          <line x1="22" y1="2" x2="11" y2="13"></line>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          <line x1="22" y1="2" x2="11" y2="13" />
+          <polygon points="22 2 15 22 11 13 2 9 22 2" />
         </svg>
       </button>
     </div>
-
-    <p class="mt-4 text-sm text-neutral">
-      Submitting opens the visitor’s email application. No third-party form key is stored in this project.
-    </p>
   </form>
 </Section>
-
-<script>
-  const form = document.querySelector<HTMLFormElement>("#contact-form");
-
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const recipient = form.dataset.recipient;
-    const formData = new FormData(form);
-    const firstName = String(formData.get("firstName") ?? "").trim();
-    const lastName = String(formData.get("lastName") ?? "").trim();
-    const senderEmail = String(formData.get("senderEmail") ?? "").trim();
-    const message = String(formData.get("message") ?? "").trim();
-
-    if (!recipient) return;
-
-    const senderName = `${firstName} ${lastName}`.trim();
-    const subject = encodeURIComponent(`Portfolio enquiry from ${senderName}`);
-    const body = encodeURIComponent(
-      `${message}\n\nFrom: ${senderName}\nEmail: ${senderEmail}`,
-    );
-
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-  });
-</script>
