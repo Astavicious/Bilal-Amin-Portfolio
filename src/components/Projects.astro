@@ -1,0 +1,98 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import type { ProjectProps } from "@types";
+
+interface Props {
+  projects: ProjectProps[];
+}
+
+const { projects } = Astro.props;
+---
+
+<Section text="Featured Projects" href="projects">
+  {
+    projects.map(
+      (
+        {
+          name,
+          summary,
+          image,
+          technologies,
+          status,
+          linkPreview,
+          linkSource,
+          linkSourceLabel,
+        },
+        index,
+      ) => {
+        const top = 92 + index * 8;
+        const zIndex = index + 1;
+        return (
+          <article
+            style={`--sticky-top: ${top}px; z-index: ${zIndex}; min-height: calc(100vh - ${top}px);`}
+            class="relative mb-12 bg-black transition-all duration-500 ease-out sm:sticky sm:top-[var(--sticky-top)]"
+          >
+            <div class="relative z-[1] flex flex-col overflow-hidden rounded-2xl border border-neutral/20 bg-[#1c232d] before:absolute before:inset-0 before:z-[-1] before:bg-[url(/pattern.svg)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid sm:min-h-[430px] sm:grid-cols-2">
+              <div class="flex shrink-0 flex-col px-6 pt-9 pb-7 sm:justify-between sm:p-10">
+                <div>
+                  {status && (
+                    <span class="mb-4 inline-block rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                      {status}
+                    </span>
+                  )}
+                  <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
+                    {name}
+                  </h3>
+                  <p class="text-base text-neutral">{summary}</p>
+                  {technologies && technologies.length > 0 && (
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                      {technologies.map((technology) => (
+                        <li class="rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-xs text-white/80">
+                          {technology}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                <div class="flex flex-wrap gap-5 pt-8 text-white">
+                  {linkSource && (
+                    <a
+                      href={linkSource}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95"
+                    >
+                      {linkSourceLabel ?? "Source"}
+                      <img src="/external.svg" alt="" class="h-4 w-4 invert" />
+                    </a>
+                  )}
+                  {linkPreview && (
+                    <a
+                      href={linkPreview}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95"
+                    >
+                      Preview
+                      <img src="/external.svg" alt="" class="h-4 w-4 invert" />
+                    </a>
+                  )}
+                </div>
+              </div>
+              <div class="flex h-[260px] items-center justify-center overflow-hidden bg-black/15 p-4 sm:h-auto sm:p-5">
+                <Image
+                  class="h-full w-full rounded-xl object-cover shadow-lg"
+                  src={image}
+                  alt={name}
+                  width="1200"
+                  height="800"
+                />
+              </div>
+            </div>
+          </article>
+        );
+      },
+    )
+  }
+</Section>

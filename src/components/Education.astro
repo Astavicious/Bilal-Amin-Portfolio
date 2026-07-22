@@ -1,0 +1,53 @@
+---
+import Section from "./Section.astro";
+import type { CertificationProps, EducationProps } from "@types";
+
+interface Props {
+  education: EducationProps[];
+  certifications: CertificationProps[];
+}
+
+const { education, certifications } = Astro.props;
+---
+
+<Section text="Education" href="education">
+  <div class="grid gap-5">
+    {
+      education.map(
+        ({ institution, degree, startDate, endDate, location, grade, detail }) => (
+          <article class="rounded-2xl border border-neutral/20 bg-[#1c232d] p-6 md:p-8">
+            <div class="mb-4 flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+              <div>
+                <h3 class="font-serif text-2xl font-semibold text-white">
+                  {institution}
+                </h3>
+                <p class="mt-1 text-base font-medium text-primary">{degree}</p>
+              </div>
+              <div class="shrink-0 text-sm text-white/70 md:text-right">
+                <p>{startDate} — {endDate}</p>
+                <p>{location}</p>
+              </div>
+            </div>
+            {grade && <p class="text-sm text-neutral">Grade: {grade}</p>}
+            {detail && <p class="text-sm text-neutral">{detail}</p>}
+          </article>
+        ),
+      )
+    }
+  </div>
+
+  <h3 class="mt-14 mb-6 font-serif text-3xl font-semibold text-white">
+    Certifications & MOOCs
+  </h3>
+  <div class="grid gap-4 md:grid-cols-2">
+    {
+      certifications.map(({ name, provider, status }) => (
+        <article class="rounded-xl border border-neutral/20 bg-white/5 p-5">
+          <h4 class="font-serif text-xl font-medium text-primary">{name}</h4>
+          <p class="mt-2 text-sm text-neutral">{provider}</p>
+          {status && <p class="mt-1 text-xs text-white/70">{status}</p>}
+        </article>
+      ))
+    }
+  </div>
+</Section>

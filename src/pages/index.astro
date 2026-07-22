@@ -1,0 +1,30 @@
+---
+import { SITE_CONTENT } from "@config";
+import Hero from "@components/Hero.astro";
+import Layout from "@layouts/Layout.astro";
+import Experience from "@components/Experience.astro";
+import Projects from "@components/Projects.astro";
+import Education from "@components/Education.astro";
+import Skills from "@components/Skills.astro";
+import Hackathons from "@components/Hackathons.astro";
+import About from "@components/About.astro";
+import ContactForm from "@components/ContactForm.astro";
+
+import "../styles/global.css";
+---
+
+<Layout>
+  <Hero {...SITE_CONTENT.hero} />
+  <Experience experience={SITE_CONTENT.experience} />
+  <Projects projects={SITE_CONTENT.projects} />
+  <Education
+    education={SITE_CONTENT.education}
+    certifications={SITE_CONTENT.certifications}
+  />
+  <Skills skills={SITE_CONTENT.skills} />
+  {SITE_CONTENT.hackathons.length > 0 && (
+    <Hackathons hackathons={SITE_CONTENT.hackathons} />
+  )}
+  <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
+  <ContactForm email={SITE_CONTENT.hero.email} />
+</Layout>

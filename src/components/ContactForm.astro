@@ -1,0 +1,123 @@
+---
+import Section from "./Section.astro";
+
+interface Props {
+  email: string;
+}
+
+const { email } = Astro.props;
+---
+
+<Section text="Contact" href="contact">
+  <form id="contact-form" data-recipient={email} class="mx-auto max-w-2xl">
+    <div class="grid gap-6 sm:grid-cols-2">
+      <div class="flex flex-col gap-2">
+        <label for="firstName" class="text-sm font-medium text-neutral">
+          First Name <span class="text-primary">*</span>
+        </label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          required
+          placeholder="First name"
+          class="rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="lastName" class="text-sm font-medium text-neutral">
+          Last Name <span class="text-primary">*</span>
+        </label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          required
+          placeholder="Last name"
+          class="rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 sm:col-span-2">
+        <label for="senderEmail" class="text-sm font-medium text-neutral">
+          Your Email <span class="text-primary">*</span>
+        </label>
+        <input
+          type="email"
+          id="senderEmail"
+          name="senderEmail"
+          required
+          placeholder="name@example.com"
+          class="rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+        />
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-col gap-2">
+      <label for="message" class="text-sm font-medium text-neutral">
+        Message <span class="text-primary">*</span>
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        rows="5"
+        placeholder="Write your message..."
+        class="resize-none rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+      ></textarea>
+    </div>
+
+    <div class="mt-8">
+      <button
+        type="submit"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-white transition-all hover:bg-primary/90 active:scale-95"
+      >
+        Create Email
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+
+    <p class="mt-4 text-sm text-neutral">
+      Submitting opens the visitor’s email application. No third-party form key is stored in this project.
+    </p>
+  </form>
+</Section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("#contact-form");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const recipient = form.dataset.recipient;
+    const formData = new FormData(form);
+    const firstName = String(formData.get("firstName") ?? "").trim();
+    const lastName = String(formData.get("lastName") ?? "").trim();
+    const senderEmail = String(formData.get("senderEmail") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    if (!recipient) return;
+
+    const senderName = `${firstName} ${lastName}`.trim();
+    const subject = encodeURIComponent(`Portfolio enquiry from ${senderName}`);
+    const body = encodeURIComponent(
+      `${message}\n\nFrom: ${senderName}\nEmail: ${senderEmail}`,
+    );
+
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+  });
+</script>
