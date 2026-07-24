@@ -225,7 +225,6 @@ export const SITE_CONFIG: SiteConfig = {
   socialLinks: [
     { text: "LinkedIn", href: "https://www.linkedin.com/in/aminbilal/" },
     { text: "GitHub", href: "https://github.com/Astavicious" },
-    { text: "Website", href: "https://bilalaminswe.com/" },
     { text: "Email", href: `mailto:${SITE_CONTENT.hero.email}` },
   ],
   canonicalURL: "https://bilalaminswe.com/",
