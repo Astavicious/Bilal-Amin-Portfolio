@@ -31,8 +31,8 @@ export const SITE_CONTENT: SiteContent = {
     {
       institution: "National University of Sciences & Technology",
       degree: "B.E. Mechatronics Engineering (Computer Science)",
-      startDate: "Sep 2017",
-      endDate: "Sep 2021",
+      startDate: "Sep 2019",
+      endDate: "Sep 2023",
       location: "Islamabad, Pakistan",
       grade: "1.7 (German grading system)",
     },
