@@ -127,7 +127,7 @@ export const SITE_CONTENT: SiteContent = {
       summary:
         "A machine-learning workflow for assessing stroke risk from patient data. The project covers preprocessing, exploratory analysis, model training and evaluation, and achieved 85% accuracy.",
       technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
-          linkSource: "https://github.com/Astavicious/Projects/Stroke prediction",
+          linkSource: "https://github.com/Astavicious/Stroke-prediction",
       image: "/project-stroke.png",
     },
     {
