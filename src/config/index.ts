@@ -120,7 +120,7 @@ export const SITE_CONTENT: SiteContent = {
         "Groq API",
         "SQLite",
       ],
-      image: "/project-germanlyft.png",
+      image: "/project-rag.png",
       linkSource: "https://github.com/Astavicious/",
       linkSourceLabel: "GitHub",
       linkPreview: "https://german-lyft.vercel.app",
