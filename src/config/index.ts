@@ -132,9 +132,9 @@ export const SITE_CONTENT: SiteContent = {
       technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
       linkSource: "https://github.com/Astavicious/Stroke-prediction",
       linkSourceLabel: "GitHub",
-      linkPreview: "https://github.com/Astavicious/Stroke-prediction",
       image: "/project-stroke.png",
     },
+
 
     {
       name: "Network Simulation Analytics",
@@ -144,7 +144,6 @@ export const SITE_CONTENT: SiteContent = {
       image: "/project-network.png",
       linkSource: "https://github.com/Astavicious/NS3-Learning",
       linkSourceLabel: "NS-3 notes",
-      linkPreview: "https://github.com/Astavicious/NS3-Learning",
     },
 
     {
@@ -153,7 +152,7 @@ export const SITE_CONTENT: SiteContent = {
         "A responsive website designed around human-computer interaction principles, including consistency, feedback, visibility, mapping and constraints, with emphasis on accessible information architecture.",
       technologies: ["HTML", "CSS", "JavaScript", "Figma", "HCI"],
       image: "/project-marketpulse.png",
-      linkPreview: "/project-marketpulse.png",
+      linkPreview: "https://marketpulsehelp.wixsite.com/marketpulse-1",
     },
 
     {
@@ -164,7 +163,6 @@ export const SITE_CONTENT: SiteContent = {
       image: "/project-algorithms.png",
       linkSource: "https://github.com/Astavicious/Coding",
       linkSourceLabel: "View repository",
-      linkPreview: "https://github.com/Astavicious/Coding",
     },
 
   ],
