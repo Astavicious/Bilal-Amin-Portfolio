@@ -31,6 +31,16 @@ const { siteLogo, navLinks } = Astro.props;
     <Menu />
   </button>
 
+  <!-- Theme toggle -->
+  <button
+    id="theme-toggle"
+    type="button"
+    aria-label="Toggle theme"
+    class="ml-4 hidden rounded-lg border border-neutral/20 bg-black/10 px-3 py-2 text-sm text-neutral hover:bg-black/20 sm:inline-flex"
+  >
+    <span id="theme-icon">🌙</span>
+  </button>
+
   <nav
     class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
     id="main-menu"
@@ -68,6 +78,28 @@ const { siteLogo, navLinks } = Astro.props;
   navItems.forEach((item) => {
     item?.addEventListener("click", toggleMenu);
   });
+
+  // Theme toggle logic (persists in localStorage)
+  const themeToggle = document.querySelector('#theme-toggle');
+  const themeIcon = document.querySelector('#theme-icon');
+
+  const updateThemeIcon = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (themeIcon) themeIcon.textContent = isDark ? '🌙' : '☀️';
+  };
+
+  const toggleTheme = () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    try {
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch (e) {
+      /* ignore */
+    }
+    updateThemeIcon();
+  };
+
+  themeToggle?.addEventListener('click', toggleTheme);
+  updateThemeIcon();
 
   // Function to update active link
   const updateActiveLink = () => {
