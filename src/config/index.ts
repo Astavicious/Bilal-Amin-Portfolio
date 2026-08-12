@@ -108,28 +108,34 @@ export const SITE_CONTENT: SiteContent = {
 
   projects: [
     {
-      name: "AI Learning Assistant",
-      status: "In development",
+      name: "GermanLyft — AI-Powered German Learning Platform",
       summary:
-        "A local RAG learning assistant that ingests PDF documents, retrieves relevant passages with ChromaDB, and generates citation-grounded answers, summaries, quizzes and study material through FastAPI and Streamlit.",
+        "A full-stack AI-powered German learning platform designed primarily for CEFR A1–A2 learners. GermanLyft combines an interactive AI tutor with grammar explanations, sentence correction, exercises, conversation practice, quizzes, user accounts, and Anki deck importing.",
       technologies: [
+        "React",
+        "TypeScript",
+        "Vite",
         "Python",
-        "LangChain",
-        "Ollama",
-        "ChromaDB",
-        "FastAPI",
-        "Streamlit",
+        "Flask",
+        "Groq API",
+        "SQLite",
       ],
-      image: "/project-rag.png",
+      image: "/project-germanlyft.png",
+      linkSource: "https://github.com/Astavicious/",
+      linkSourceLabel: "GitHub",
+      linkPreview: "/project-germanlyft.png",
     },
     {
       name: "Stroke Risk Prediction",
       summary:
         "A machine-learning workflow for assessing stroke risk from patient data. The project covers preprocessing, exploratory analysis, model training and evaluation, and achieved 85% accuracy.",
       technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
-          linkSource: "https://github.com/Astavicious/Stroke-prediction",
+      linkSource: "https://github.com/Astavicious/Stroke-prediction",
+      linkSourceLabel: "GitHub",
+      linkPreview: "https://github.com/Astavicious/Stroke-prediction",
       image: "/project-stroke.png",
     },
+
     {
       name: "Network Simulation Analytics",
       summary:
@@ -138,14 +144,18 @@ export const SITE_CONTENT: SiteContent = {
       image: "/project-network.png",
       linkSource: "https://github.com/Astavicious/NS3-Learning",
       linkSourceLabel: "NS-3 notes",
+      linkPreview: "https://github.com/Astavicious/NS3-Learning",
     },
+
     {
       name: "MarketPulse HCI Project",
       summary:
         "A responsive website designed around human-computer interaction principles, including consistency, feedback, visibility, mapping and constraints, with emphasis on accessible information architecture.",
       technologies: ["HTML", "CSS", "JavaScript", "Figma", "HCI"],
       image: "/project-marketpulse.png",
+      linkPreview: "/project-marketpulse.png",
     },
+
     {
       name: "Algorithm Practice Library",
       summary:
@@ -154,7 +164,9 @@ export const SITE_CONTENT: SiteContent = {
       image: "/project-algorithms.png",
       linkSource: "https://github.com/Astavicious/Coding",
       linkSourceLabel: "View repository",
+      linkPreview: "https://github.com/Astavicious/Coding",
     },
+
   ],
 
   skills: [
