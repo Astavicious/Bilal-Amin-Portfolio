@@ -123,7 +123,7 @@ export const SITE_CONTENT: SiteContent = {
       image: "/project-germanlyft.png",
       linkSource: "https://github.com/Astavicious/",
       linkSourceLabel: "GitHub",
-      linkPreview: "/project-germanlyft.png",
+      linkPreview: "https://german-lyft.vercel.app",
     },
     {
       name: "Stroke Risk Prediction",
