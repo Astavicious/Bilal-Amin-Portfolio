@@ -36,20 +36,8 @@ const {
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-
-    <!-- Theme initialisation script: apply saved theme before page paints to avoid flash -->
-    <script>
-      (function() {
-        try {
-          const theme = localStorage.getItem('theme');
-          if (theme === 'dark') document.documentElement.classList.add('dark');
-        } catch (e) {
-          /* ignore */
-        }
-      })();
-    </script>
   </head>
-  <body class="font-sans">
+  <body class="bg-black font-sans">
     <Header siteLogo={siteLogo} navLinks={navLinks} />
     <main class="mx-auto max-w-3xl px-5">
       <slot />

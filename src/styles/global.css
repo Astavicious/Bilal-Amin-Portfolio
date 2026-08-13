@@ -1,17 +1,13 @@
 @import "tailwindcss";
 
-/* Root theme variables (light mode) */
-:root {
+@theme {
   --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
   --font-serif: "Gabarito Variable", ui-serif, serif;
 
-  /* Light palette (suggested: Modern Indigo) */
-  --bg: #f8fafc; /* page background */
-  --bg-card: #ffffff; /* cards / panels */
-  --text: #0f172a; /* primary text */
-  --muted: #6b7280; /* secondary text */
-  --primary: #4f46e5; /* accent / links */
-  --accent: #06b6d4;
+  --color-primary: #ffffff;
+  --color-neutral: #a3a3a3;
+  --color-white: #ffffff;
+  --color-black: #000000;
 
   --text-xs: 0.875rem;
   --text-xs--line-height: 1.125rem;
@@ -45,78 +41,22 @@
   --tracking-tight: -0.25px;
 
   --animate-slide-in: slide-in 600ms ease both;
-}
 
-/* Dark theme overrides (Modern Midnight) */
-.dark {
-  --bg: #0b1220;
-  --bg-card: #0f1724;
-  --text: #e6eef8;
-  --muted: #94a3b8;
-  --primary: #7c93ff;
-  --accent: #60a5fa;
-}
-
-@keyframes slide-in {
-  10% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
+  @keyframes slide-in {
+    10% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }
 
-/* Apply the page base colors using the variables */
-body {
-  min-width: 320px;
-  background-color: var(--bg);
-  color: var(--text);
-  transition: background-color 180ms ease, color 180ms ease;
-}
-
-/* Make common utility classes respect theme by mapping common utility class names */
-/* This is a pragmatic approach to convert existing bg-black / text-white usages to theme aware colors. */
-[class*="bg-black"] {
-  background-color: var(--bg-card) !important;
-}
-
-[class*="bg-black/"] {
-  /* keep transparency but base on card color */
-  background-color: color-mix(in srgb, var(--bg-card) 75%, transparent) !important;
-}
-
-[class*="text-white"] {
-  color: var(--text) !important;
-}
-
-/* Neutral / muted text mapping */
-.text-neutral, [class*="text-neutral"] {
-  color: var(--muted) !important;
-}
-
-/* Primary link / badge mapping */
-.text-primary, [class*="text-primary"] {
-  color: var(--primary) !important;
-}
-
-.border-white, [class*="border-white"] {
-  border-color: color-mix(in srgb, var(--text) 20%, transparent) !important;
-}
-
-/* Selection color */
 ::selection {
-  background: color-mix(in srgb, var(--primary) 55%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 55%, transparent);
   color: white;
 }
 
-/* Keep the slide-in animation variable */
-:root {
-  --animate-slide-in: slide-in 600ms ease both;
+body {
+  min-width: 320px;
 }
-
-/* Accessibility: ensure focus outlines remain visible */
-:focus {
-  outline: 2px solid color-mix(in srgb, var(--primary) 60%, transparent);
-  outline-offset: 2px;
-}
-
