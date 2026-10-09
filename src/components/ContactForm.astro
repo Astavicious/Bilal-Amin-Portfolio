@@ -1,12 +1,6 @@
 ---
 import Section from "./Section.astro";
 import { SITE_CONFIG } from "@config";
-
-interface Props {
-  email: string;
-}
-
-const { email } = Astro.props;
 ---
 
 <Section text="Contact" href="contact">
@@ -121,10 +115,4 @@ const { email } = Astro.props;
       </button>
     </div>
   </form>
-  <p class="mx-auto mt-6 max-w-2xl text-sm text-neutral">
-    Or email <a
-      href={`mailto:${email}`}
-      class="text-white underline underline-offset-4">{email}</a
-    > directly.
-  </p>
 </Section>
