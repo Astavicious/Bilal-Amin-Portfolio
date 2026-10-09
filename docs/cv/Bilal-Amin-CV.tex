@@ -1,0 +1,213 @@
+%-------------------------
+% Resume in Latex
+% Author : Bilal Amin
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-5pt}
+}
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------
+
+
+\setlength{\footskip}{5pt}
+\newcommand{\resumeEducation}[5]{
+\vspace{-2pt}\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\textbf{#1} & #2 \\
+\textit{\small #3} & \textit{\small #4} \\
+\multicolumn{2}{l}{\textit{\small #5}}
+\end{tabular*}\vspace{-4pt}
+}
+\begin{document}
+\begin{center}
+\textbf{\Huge Bilal Amin} \\ \vspace{1pt}
+\small +49 176 86534249 $|$ \href{mailto:write2bilalamin@gmail.com}{Email} $|$ \href{https://linkedin.com/in/aminbilal/}{LinkedIn} $|$ \href{https://github.com/Astavicious}{GitHub} $|$ \href{https://bilal-amin-portfolio-eight.vercel.app}{Portfolio} $|$ Saarbrücken, Germany
+\end{center}
+\small{MSc Data Science and AI student at Saarland University, with current HiWi roles in software engineering research and web development. Interested in AI-assisted software engineering, HCI, UI/UX design, and web development.}
+\section{Education}
+\resumeSubHeadingListStart
+\resumeEducation{Universität des Saarlandes}{Apr. 2024 -- Present}{Master's degree, Data Science and AI}{Saarbrücken, Germany}{Grade: 1.9 (German grading system)}
+\resumeSubheading{University of Bergen (Erasmus+ Exchange Semester)}{Jan. 2026 -- Jun. 2026}{Exchange Student, Computer Science}{Bergen, Norway}
+\resumeEducation{National University of Sciences \& Technology}{Sep. 2019 -- Sep. 2023}{Bachelor's in Mechatronics Engineering (Computer Science)}{Islamabad, Pakistan}{Grade: 1.7 (German grading system)}
+\resumeSubHeadingListEnd
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{Research Assistant (HiWi) -- Software Engineering}{Oct. 2026 -- Present}{Chair of Software Engineering, Saarland University}{Saarbrücken, Germany}
+\resumeItemListStart
+\resumeItem{Work with Qingqing Dong on AI-assisted software engineering and model-driven systems engineering research.}
+\resumeItem{Research focus includes model merging, semantic merge-conflict detection, and feature-based merge recommendations.}
+\resumeItem{Support research on software evolution and intelligent methods for software and model-based systems.}
+\resumeItemListEnd
+\resumeSubheading{Student Assistant (HiWi) -- Web Development}{Sep. 2026 -- Present}{EuroComCenter, Saarland University}{Saarbrücken, Germany}
+\resumeItemListStart
+\resumeItem{Maintain and improve the EuroComCenter web platform, focusing on usability, multilingual content, and website structure.}
+\resumeItem{Review the existing implementation, fix technical and user-interface issues, and manage CMS-based content and digital media.}
+\resumeItem{Work with the project team to translate requirements into practical technical and design improvements.}
+\resumeItemListEnd
+\resumeSubheading{Working Student -- Internet Architecture Group}{Oct. 2024 -- Mar. 2025}{Max Planck Institute for Informatics (MPI)}{Saarbrücken, Germany}
+\resumeItemListStart
+\resumeItem{Designed an automated framework to evaluate congestion control algorithms in NS-3 (Network Simulator).}
+\resumeItem{Created a user-friendly dashboard to visualize performance metrics under different network conditions.}
+\resumeItem{Developed system tests and metrics for performance evaluation across varied scenarios.}
+\resumeItem{Analyzed simulation results to identify optimization opportunities and guide design decisions.}
+\resumeItemListEnd
+\resumeSubheading{Data Analyst}{Oct. 2023 -- Mar. 2024}{Convergent Business Technologies}{Islamabad, Pakistan}
+\resumeItemListStart
+\resumeItem{Developed reproducible data science workflows using Python and SQL to manipulate and analyze data.}
+\resumeItem{As part of training, completed the CS50 course and created several dashboards related to the coursework.}
+\resumeItemListEnd
+\resumeSubheading{Web Development Intern}{Jun. 2023 -- Aug. 2023}{CureMD}{Lahore, Pakistan}
+\resumeItemListStart
+\resumeItem{Designed user interfaces using HTML, CSS, and JavaScript, improving usability and accessibility for end users.}
+\resumeItem{Developed APIs in the .NET framework, enhancing data integration and tool development.}
+\resumeItemListEnd
+\resumeSubheading{Technical Intern}{Aug. 2021 -- Oct. 2021}{STEP (Space Technology Education and Popularization)}{Islamabad, Pakistan}
+\resumeItemListStart
+\resumeItem{Led workshops teaching programming fundamentals using Scratch, focusing on hands-on learning for underprivileged youth.}
+\resumeItem{Created educational materials to simplify complex technology concepts, fostering interest in STEM fields.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\newpage
+\renewcommand{\resumeItem}[1]{\item{\fontsize{9}{11.2}\selectfont #1\vspace{-2pt}}}
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading{\textbf{AI-Assisted Dafny Code Generation and Verification}}{2026}
+\resumeItemListStart
+\resumeItem{Built a Python/Codex pipeline that generates Dafny from English requirements and uses verifier feedback for up to two repairs.}
+\resumeItem{Evaluated Bounded Counter, Authorized Access, and Account Transfer with two prompt profiles: four of six runs verified initially; all six verified within three attempts. The profiles tied in this small experiment.}
+\resumeItem{Separately reviewed requirement coverage; formal verification checks written contracts rather than English-to-specification faithfulness.}
+\resumeItemListEnd
+\resumeProjectHeading{\textbf{GermanLyft -- AI-Powered German Learning Platform}}{2026}
+\resumeItemListStart
+\resumeItem{Developed a full-stack German-learning platform using React, TypeScript, Flask, and the Groq LLM API, mainly for CEFR A1--A2 learners.}
+\resumeItem{Built an interactive AI tutor for grammar explanations, sentence correction, vocabulary practice, conversational learning, and dynamically generated exercises.}
+\resumeItem{Implemented placement tests, quizzes, user accounts, profiles, and Anki .apkg deck importing using a REST-based React/Flask architecture.}
+\resumeItem{Deployed the frontend on Vercel and the backend on Render.}
+\resumeItemListEnd
+\resumeProjectHeading{\textbf{AI Learning Assistant using LLMs (RAG)}}{2025}
+\resumeItemListStart
+\resumeItem{Built an AI-powered learning assistant using Python, LangChain, Streamlit, and FastAPI.}
+\resumeItem{Integrated a locally hosted Llama model with Retrieval-Augmented Generation to answer questions from uploaded PDF documents.}
+\resumeItem{Implemented document processing, vector embeddings, ChromaDB, and citation-based responses.}
+\resumeItem{Added features to generate summaries, quizzes, and study materials from course documents.}
+\resumeItemListEnd
+\resumeProjectHeading{\textbf{Smart StudyDesk: AI-Powered Study Organizer}}{2024}
+\resumeItemListStart
+\resumeItem{Designed a cross-platform study application for organizing, summarizing, and reviewing lecture materials.}
+\resumeItem{Added AI-based note summaries, personalized quizzes, progress tracking, and weak-area analysis.}
+\resumeItem{Conducted usability testing using semi-structured interviews and NASA-TLX workload analysis.}
+\resumeItem{Improved the interface based on user feedback, with clearer navigation, folder organization, and feedback visibility.}
+\resumeItemListEnd
+\resumeProjectHeading{\textbf{MarketPulse Website Design and HCI Analysis}}{2024}
+\resumeItemListStart
+\resumeItem{Designed and developed a responsive website for MarketPulse using HTML, CSS, and JavaScript.}
+\resumeItem{Applied HCI principles including consistency, simplicity, feedback, visibility, constraints, and accessibility.}
+\resumeItem{Improved the information structure and user interaction through usability-focused design.}
+\resumeItemListEnd
+\resumeProjectHeading{\textbf{Side Hustle Launchpad -- Tech4Europe Hackathon, KIT}}{2024}
+\resumeItemListStart
+\resumeItem{Developed a full-stack web application during the Tech4Europe Hackathon at Karlsruhe Institute of Technology, Germany.}
+\resumeItem{Built analytics dashboards and personalized recommendations to support small-business planning.}
+\resumeItem{Used FastAPI and MongoDB for backend development and data management.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{MOOCs and Relevant Coursework}
+\resumeItemListStart
+\resumeItem{Saarland University: Data Networks, Neural Networks: Theory and Implementation, Elements of Machine Learning, Human Computer Interaction, High-Level Computer Vision, Generative AI, Machine Translation, Attacks Against Machine Learning Models, and Competitive Programming.}
+\resumeItem{University of Bergen: Functional Programming, Qualitative Analysis, and Philosophy of AI.}
+\resumeItem{Certifications: Machine Learning Specialization -- DeepLearning.AI and Stanford Online; CS50's Introduction to Artificial Intelligence with Python -- Harvard University; Google Data Analytics Professional Certificate -- Google; Python for Data Science, AI \& Development -- IBM.}
+\resumeItemListEnd
+\section{Technical Skills and Interests}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\item{\fontsize{9}{11.2}\selectfont
+\textbf{Programming}: Python, JavaScript, TypeScript, SQL, HTML, CSS, C++, C\#, Java, Dafny \\
+\textbf{Machine Learning \& AI}: Scikit-Learn, PyTorch, TensorFlow, Hugging Face Transformers, Large Language Models (LLMs), Prompt Engineering, Retrieval-Augmented Generation (RAG) \\
+\textbf{LLM Frameworks}: LangChain, LangGraph, Ollama, ChromaDB, Codex SDK \\
+\textbf{Web Frameworks}: FastAPI, Flask, Streamlit, ReactJS \\
+\textbf{Libraries \& Data}: Pandas, NumPy, PySpark, Matplotlib \\
+\textbf{Tools \& Platforms}: Git, GitHub Actions, Docker, Microsoft Azure, VS Code, Jupyter, Power BI, Tableau, Figma \\
+\textbf{Interests}: LLM Applications, Agentic AI, AI-Assisted Software Engineering, Data Engineering, Workflow Automation, HCI, UI/UX Design
+}
+\end{itemize}
+\end{document}

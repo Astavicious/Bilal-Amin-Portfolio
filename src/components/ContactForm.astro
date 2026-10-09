@@ -1,5 +1,6 @@
 ---
 import Section from "./Section.astro";
+import { SITE_CONFIG } from "@config";
 
 interface Props {
   email: string;
@@ -21,23 +22,11 @@ const { email } = Astro.props;
       value="794a5153-918e-4fb2-b6ef-a254cc1fc562"
     />
 
-    <input
-      type="hidden"
-      name="subject"
-      value="New Portfolio Message"
-    />
+    <input type="hidden" name="subject" value="New Portfolio Message" />
 
-    <input
-      type="hidden"
-      name="from_name"
-      value="Bilal Amin Portfolio"
-    />
+    <input type="hidden" name="from_name" value="Bilal Amin Portfolio" />
 
-    <input
-      type="hidden"
-      name="redirect"
-      value="https://bilal-amin-portfolio.vercel.app"
-    />
+    <input type="hidden" name="redirect" value={SITE_CONFIG.canonicalURL} />
 
     <input
       type="checkbox"
@@ -126,10 +115,16 @@ const { email } = Astro.props;
           stroke-linecap="round"
           stroke-linejoin="round"
         >
-          <line x1="22" y1="2" x2="11" y2="13" />
-          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
         </svg>
       </button>
     </div>
   </form>
+  <p class="mx-auto mt-6 max-w-2xl text-sm text-neutral">
+    Or email <a
+      href={`mailto:${email}`}
+      class="text-white underline underline-offset-4">{email}</a
+    > directly.
+  </p>
 </Section>

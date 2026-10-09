@@ -9,8 +9,6 @@ import Skills from "@components/Skills.astro";
 import Hackathons from "@components/Hackathons.astro";
 import About from "@components/About.astro";
 import ContactForm from "@components/ContactForm.astro";
-
-import "../styles/global.css";
 ---
 
 <Layout>
@@ -22,9 +20,11 @@ import "../styles/global.css";
     certifications={SITE_CONTENT.certifications}
   />
   <Skills skills={SITE_CONTENT.skills} />
-  {SITE_CONTENT.hackathons.length > 0 && (
-    <Hackathons hackathons={SITE_CONTENT.hackathons} />
-  )}
+  {
+    SITE_CONTENT.hackathons.length > 0 && (
+      <Hackathons hackathons={SITE_CONTENT.hackathons} />
+    )
+  }
   <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
   <ContactForm email={SITE_CONTENT.hero.email} />
 </Layout>

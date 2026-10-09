@@ -1,0 +1,299 @@
+---
+import Layout from "@layouts/Layout.astro";
+const title = "AI-Assisted Dafny Code Generation and Verification";
+const rows = [
+  ["Bounded Counter", "1", "3"],
+  ["Authorized Access", "1", "1"],
+  ["Account Transfer", "3", "1"],
+];
+---
+
+<Layout
+  title={`${title} — Bilal Amin`}
+  description="A small research prototype comparing two prompts for Dafny generation with verifier-guided repair across three scenarios."
+>
+  <article class="case-study py-10 text-white sm:py-16">
+    <a
+      href="/#projects"
+      class="text-sm text-neutral underline underline-offset-4 hover:text-white"
+      >← All projects</a
+    >
+    <p class="mt-10 text-sm text-neutral">Research prototype · 2026</p>
+    <h1 class="mt-4 font-serif text-4xl leading-tight sm:text-5xl">{title}</h1>
+    <p class="mt-6 text-neutral">
+      Can an AI agent turn a short English requirement into Dafny code that
+      passes formal verification? I built a small Python pipeline to explore
+      prompt design and verifier-guided repair, then compared two prompt
+      profiles on three scenarios.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-5 text-sm">
+      <a
+        class="underline underline-offset-4"
+        href="https://github.com/Astavicious/Entry-Task"
+        target="_blank"
+        rel="noreferrer">Source and experiment artifacts ↗</a
+      >
+      <a
+        class="underline underline-offset-4"
+        href="https://github.com/Astavicious/Entry-Task/blob/main/results/benchmark/20260831T163605Z_summary.json"
+        target="_blank"
+        rel="noreferrer">Saved results ↗</a
+      >
+    </div>
+
+    <section>
+      <h2>The problem</h2>
+      <p>
+        Generated code can look plausible while violating a requirement. Dafny
+        checks an implementation against written preconditions, postconditions,
+        and invariants. The experiment therefore separated two questions:
+        whether the code verifies, and whether its specification captures the
+        original English requirement.
+      </p>
+    </section>
+
+    <section>
+      <h2>Architecture and approach</h2>
+      <p>
+        Python coordinates the Codex SDK and Dafny CLI. The implementation has
+        separate modules for prompts, model calls and code extraction,
+        verification, the repair loop, and benchmarking. Each model call runs in
+        a fresh temporary directory outside the repository to avoid hidden
+        repository context.
+      </p>
+      <figure class="mt-6">
+        <a
+          href="/dafny-pipeline.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open full-size pipeline slide"
+          ><img
+            src="/dafny-pipeline.png"
+            width="1920"
+            height="1080"
+            alt="Pipeline: requirement, general or improved prompt, Codex response, unchanged Dafny source, verifier; failures return the requirement, previous source, and complete diagnostics for repair."
+            class="w-full rounded-xl"
+          /></a
+        >
+        <figcaption>
+          Pipeline slide from my project presentation. Open the image to inspect
+          it at full size.
+        </figcaption>
+      </figure>
+      <ol>
+        <li>
+          Read a scenario requirement and assemble the general or
+          verification-aware (“improved”) prompt.
+        </li>
+        <li>
+          Ask Codex to generate Dafny; save the raw response and extracted
+          source without manually editing the program.
+        </li>
+        <li>Run <code>dafny verify</code> and save its output.</li>
+        <li>
+          On failure, send the original requirement, previous source, and
+          complete verifier feedback back to the model.
+        </li>
+        <li>
+          Stop at a verification success or after three total attempts: one
+          generation and at most two repairs.
+        </li>
+      </ol>
+      <p>
+        The improved prompt adds guidance on meaningful contracts, requirement
+        preservation, and avoiding proof shortcuts. Its name describes the
+        intervention; it does not imply better performance.
+      </p>
+      <p class="text-sm">
+        Technologies: Python · Codex SDK · gpt-5.4-mini · Dafny 4.11 ·
+        subprocess · JSON experiment reports
+      </p>
+    </section>
+
+    <section>
+      <h2>Three evaluation scenarios</h2>
+      <ul>
+        <li>
+          <strong>Bounded Counter:</strong> increment and reset a counter while preserving
+          non-negativity and a configurable maximum; an increment at the limit leaves
+          the value unchanged.
+        </li>
+        <li>
+          <strong>Authorized Access:</strong> grant access only to authorized users
+          and update authorization state correctly when granting or revoking it.
+        </li>
+        <li>
+          <strong>Account Transfer:</strong> constrain the amount to a non-negative
+          value within the source balance, keep both balances non-negative, and preserve
+          their combined balance.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Saved experiment results</h2>
+      <p>
+        The clean batch dated August 31, 2026 used three scenarios × two prompt
+        profiles × one model × one repetition: six runs. The table reports the
+        successful attempt number from those saved runs, rather than a new
+        generation benchmark.
+      </p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <caption class="mb-3 text-left text-neutral"
+            >Successful attempt, with a maximum of three attempts per run</caption
+          >
+          <thead
+            ><tr><th>Scenario</th><th>General</th><th>Improved</th></tr></thead
+          >
+          <tbody
+            >{
+              rows.map(([scenario, general, improved]) => (
+                <tr>
+                  <>
+                    <th scope="row">{scenario}</th>
+                    <td>{general}</td>
+                    <td>{improved}</td>
+                  </>
+                </tr>
+              ))
+            }</tbody
+          >
+        </table>
+      </div>
+      <p>
+        Four of six programs verified on the first attempt. Both profiles
+        reached 2/3 first-attempt successes and 3/3 successes within the attempt
+        limit, using five total attempts each. The feedback loop repaired both
+        initial failures. All six final programs were warning-free in the saved
+        results.
+      </p>
+      <p>
+        I separately reviewed the final programs against the supplied
+        requirements and recorded coverage under reasonable interpretations.
+        This was a human assessment, not an automated proof that the English
+        meaning was captured.
+      </p>
+    </section>
+
+    <section>
+      <h2>A repair example</h2>
+      <p>
+        The improved bounded-counter run first generated unsupported class-level
+        invariant syntax. The second attempt introduced a <code>Valid()</code> predicate,
+        but its increment method did not require a valid starting state. On attempt
+        three, the model added <code>requires Valid()</code>; Dafny then
+        reported six verified obligations and zero errors.
+      </p>
+      <figure class="mt-6">
+        <a
+          href="/dafny-repair.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open full-size repair slide"
+          ><img
+            src="/dafny-repair.png"
+            width="1920"
+            height="1080"
+            alt="Attempt two could not prove the Valid postcondition. Attempt three adds requires Valid() to Increment and verifies with six verified obligations and zero errors."
+            class="w-full rounded-xl"
+            loading="lazy"
+          /></a
+        >
+        <figcaption>Repair slide from my project presentation.</figcaption>
+      </figure>
+      <p>
+        The verifier supplied a failed proof obligation; the model made the
+        repair. This illustrates why initial-state assumptions must be explicit
+        in contracts.
+      </p>
+      <p>The successful method contract, as text:</p>
+      <pre
+        class="mt-4 overflow-x-auto rounded-xl border border-white/15 p-4 text-sm"><code>{`method Increment()
+  requires Valid()
+  modifies this
+  ensures Valid()
+  ensures max == old(max)
+  ensures value == if old(value) < old(max)
+    then old(value) + 1 else old(value)`}</code></pre>
+    </section>
+
+    <section>
+      <h2>Limitations and lessons</h2>
+      <p>
+        The prompt profiles tied in one small experiment. One model, one
+        repetition, and three short scenarios cannot establish that either
+        prompt is generally better or that the profiles are equivalent. Model
+        output is stochastic, and harder programs may expose problems with
+        loops, framing, and termination.
+      </p>
+      <p>
+        The strongest lesson was the usefulness of concrete verifier feedback.
+        Experimental isolation also mattered, and verification success still
+        needed a separate review of specification faithfulness.
+      </p>
+      <p>
+        A next experiment would use at least five repetitions, harder tasks, and
+        a more systematic semantic review. Those are proposed extensions, not
+        completed features.
+      </p>
+    </section>
+    <a
+      href="/#projects"
+      class="inline-block py-8 text-sm underline underline-offset-4"
+      >← Back to projects</a
+    >
+  </article>
+</Layout>
+
+<style>
+  .case-study section {
+    margin-top: 3rem;
+  }
+  .case-study h2 {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  .case-study section p {
+    color: var(--color-neutral);
+    margin-top: 1rem;
+  }
+  .case-study ul,
+  .case-study ol {
+    padding-left: 1.5rem;
+    margin-top: 1.25rem;
+    color: var(--color-neutral);
+  }
+  .case-study ul {
+    list-style: disc;
+  }
+  .case-study ol {
+    list-style: decimal;
+  }
+  .case-study li {
+    margin-top: 0.75rem;
+  }
+  .case-study strong {
+    color: white;
+    font-weight: 500;
+  }
+  .case-study code {
+    color: white;
+    overflow-wrap: anywhere;
+  }
+  .case-study th,
+  .case-study td {
+    padding: 0.85rem 0.6rem;
+    border-bottom: 1px solid #ffffff26;
+  }
+  .case-study tbody th {
+    font-weight: 400;
+  }
+  .case-study figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-neutral);
+  }
+</style>
