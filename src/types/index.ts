@@ -62,6 +62,7 @@ export interface ProjectProps {
   linkPreview?: string;
   linkSource?: string;
   linkSourceLabel?: string;
+  linkCaseStudy?: string;
 }
 
 export interface SkillGroupProps {

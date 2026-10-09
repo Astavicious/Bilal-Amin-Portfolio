@@ -23,6 +23,7 @@ const { projects } = Astro.props;
           linkPreview,
           linkSource,
           linkSourceLabel,
+          linkCaseStudy,
         },
         index,
       ) => {
@@ -61,6 +62,14 @@ const { projects } = Astro.props;
                 </div>
 
                 <div class="flex flex-wrap gap-5 pt-8 text-white">
+                  {linkCaseStudy && (
+                    <a
+                      href={linkCaseStudy}
+                      class="rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10"
+                    >
+                      Read case study
+                    </a>
+                  )}
                   {linkSource && (
                     <a
                       href={linkSource}
@@ -69,11 +78,7 @@ const { projects } = Astro.props;
                       class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95"
                     >
                       {linkSourceLabel ?? "Source"}
-                      <img
-                        src="/external.svg"
-                        alt=""
-                        class="h-4 w-4 invert"
-                      />
+                      <img src="/external.svg" alt="" class="h-4 w-4 invert" />
                     </a>
                   )}
 
@@ -85,11 +90,7 @@ const { projects } = Astro.props;
                       class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95"
                     >
                       Preview
-                      <img
-                        src="/external.svg"
-                        alt=""
-                        class="h-4 w-4 invert"
-                      />
+                      <img src="/external.svg" alt="" class="h-4 w-4 invert" />
                     </a>
                   )}
                 </div>

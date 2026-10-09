@@ -5,8 +5,8 @@ export const SITE_CONTENT: SiteContent = {
     name: "Bilal Amin",
     specialty: "Data Science & AI Engineer",
     summary:
-      "Master's student at Saarland University building machine-learning, LLM and RAG applications, with experience in network simulation, data analysis and web development.",
-    email: "write2bilalamin2@gmail.com",
+      "MSc Data Science & AI student at Saarland University, Research Assistant in Software Engineering and Web Development HiWi at EuroComCenter, interested in AI-assisted software engineering, HCI and web development.",
+    email: "write2bilalamin@gmail.com",
     location: "Saarbrücken, Germany",
     resumeUrl: "/Bilal-Amin-CV.pdf",
   },
@@ -60,6 +60,30 @@ export const SITE_CONTENT: SiteContent = {
 
   experience: [
     {
+      company: "Chair of Software Engineering, Saarland University",
+      position: "Research Assistant (HiWi) — Software Engineering",
+      startDate: "Oct 2026",
+      endDate: "Present",
+      location: "Saarbrücken, Germany",
+      summary: [
+        "Work with Qingqing Dong on AI-assisted software engineering and model-driven systems engineering research.",
+        "Research focus includes model merging, semantic merge-conflict detection, and feature-based merge recommendations.",
+        "Support research on software evolution and intelligent methods for software and model-based systems.",
+      ],
+    },
+    {
+      company: "EuroComCenter, Saarland University",
+      position: "Student Assistant (HiWi) — Web Development",
+      startDate: "Sep 2026",
+      endDate: "Present",
+      location: "Saarbrücken, Germany",
+      summary: [
+        "Maintain and improve the EuroComCenter web platform, focusing on usability, multilingual content, and website structure.",
+        "Review the implementation, fix technical and user-interface issues, and manage CMS-based content and digital media.",
+        "Work with the project team to translate requirements into practical technical and design improvements.",
+      ],
+    },
+    {
       company: "Max Planck Institute for Informatics (MPI)",
       position: "Working Student — Internet Architecture Group",
       startDate: "Oct 2024",
@@ -108,6 +132,23 @@ export const SITE_CONTENT: SiteContent = {
 
   projects: [
     {
+      name: "AI-Assisted Dafny Code Generation and Verification",
+      status: "Completed research prototype",
+      summary:
+        "A Python/Codex prototype for generating Dafny from English requirements and repairing it with verifier feedback. All six saved runs across three scenarios verified within three attempts; the two prompt profiles tied. Requirement coverage was reviewed separately.",
+      technologies: [
+        "Python",
+        "Codex SDK",
+        "Dafny",
+        "Formal Verification",
+        "Prompt Engineering",
+      ],
+      image: "/dafny-pipeline.png",
+      linkCaseStudy: "/projects/verified-dafny",
+      linkSource: "https://github.com/Astavicious/Entry-Task",
+      linkSourceLabel: "View repository",
+    },
+    {
       name: "GermanLyft — AI-Powered German Learning Platform",
       summary:
         "A full-stack AI-powered German learning platform designed primarily for CEFR A1–A2 learners. GermanLyft combines an interactive AI tutor with grammar explanations, sentence correction, exercises, conversation practice, quizzes, user accounts, and Anki deck importing.",
@@ -121,7 +162,7 @@ export const SITE_CONTENT: SiteContent = {
         "SQLite",
       ],
       image: "/project-rag.png",
-      linkSource: "https://github.com/Astavicious/",
+      linkSource: "https://github.com/Astavicious/GermanLyft",
       linkSourceLabel: "GitHub",
       linkPreview: "https://german-lyft.vercel.app",
     },
@@ -135,12 +176,16 @@ export const SITE_CONTENT: SiteContent = {
       image: "/project-stroke.png",
     },
 
-
     {
       name: "Network Simulation Analytics",
       summary:
         "An automated NS-3 evaluation framework for congestion-control algorithms, supported by system tests and a dashboard for comparing throughput, delay, packet loss and performance across scenarios.",
-      technologies: ["Python", "NS-3", "Automated Testing", "Data Visualization"],
+      technologies: [
+        "Python",
+        "NS-3",
+        "Automated Testing",
+        "Data Visualization",
+      ],
       image: "/project-network.png",
       linkSource: "https://github.com/Astavicious/NS3-Learning",
       linkSourceLabel: "NS-3 notes",
@@ -159,18 +204,33 @@ export const SITE_CONTENT: SiteContent = {
       name: "Algorithm Practice Library",
       summary:
         "A public collection of Python solutions for data-structure and algorithm problems, covering arrays, strings, hash maps, two pointers and common interview problem-solving patterns.",
-      technologies: ["Python", "Algorithms", "Data Structures", "Problem Solving"],
+      technologies: [
+        "Python",
+        "Algorithms",
+        "Data Structures",
+        "Problem Solving",
+      ],
       image: "/project-algorithms.png",
       linkSource: "https://github.com/Astavicious/Coding",
       linkSourceLabel: "View repository",
     },
-
   ],
 
   skills: [
     {
       category: "Programming",
-      items: ["Python", "JavaScript", "SQL", "HTML", "CSS", "C++", "C#", "Java"],
+      items: [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "SQL",
+        "HTML",
+        "CSS",
+        "C++",
+        "C#",
+        "Java",
+        "Dafny",
+      ],
     },
     {
       category: "Machine Learning & AI",
@@ -178,12 +238,23 @@ export const SITE_CONTENT: SiteContent = {
         "Scikit-learn",
         "Large Language Models",
         "Prompt Engineering",
+        "AI-Assisted Software Engineering",
+        "Formal Verification",
         "Retrieval-Augmented Generation",
       ],
     },
     {
       category: "LLM & Web Frameworks",
-      items: ["LangChain", "Ollama", "ChromaDB", "FastAPI", "Streamlit", "ReactJS"],
+      items: [
+        "LangChain",
+        "Ollama",
+        "ChromaDB",
+        "Codex SDK",
+        "FastAPI",
+        "Flask",
+        "Streamlit",
+        "ReactJS",
+      ],
     },
     {
       category: "Data & Visualization",
@@ -211,9 +282,11 @@ export const SITE_CONTENT: SiteContent = {
 
   about: {
     description: `
-I am a Data Science and Artificial Intelligence master's student at Saarland University, with an Erasmus+ exchange semester in Computer Science at the University of Bergen. My background combines machine learning, data analysis, network simulation and web development.
+I am an MSc Data Science and Artificial Intelligence student at Saarland University and completed an Erasmus+ exchange semester in Computer Science at the University of Bergen. I currently work as a Research Assistant (HiWi) at the Chair of Software Engineering and as a Student Assistant (HiWi) in Web Development at EuroComCenter.
 
-I am particularly interested in LLM applications, retrieval-augmented generation, trustworthy machine learning, intelligent learning systems and workflow automation. I enjoy turning technical ideas into practical, well-tested tools and clear visual interfaces, and I am open to student roles, internships, research opportunities and open-source collaboration.
+My research focus includes AI-assisted software engineering, model-driven systems engineering, model merging, semantic merge-conflict detection, and feature-based merge recommendations. At EuroComCenter, I work on usability, multilingual content, CMS maintenance, and website structure. Previously, I worked in the Internet Architecture Group at the Max Planck Institute for Informatics.
+
+I am interested in AI, HCI, UI/UX design, and web development. My projects include LLM applications and a completed Dafny generation-and-verification prototype, where I explored prompt comparison and verifier-guided repair.
     `,
     image: "/bilal-amin.jpg",
   },
@@ -239,5 +312,5 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "LeetCode", href: "https://leetcode.com/u/write2bilalamin/" },
     { text: "Email", href: `mailto:${SITE_CONTENT.hero.email}` },
   ],
-  canonicalURL: "https://bilalaminswe.com/",
+  canonicalURL: "https://bilal-amin-portfolio-eight.vercel.app/",
 };
