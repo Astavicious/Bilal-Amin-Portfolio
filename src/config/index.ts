@@ -310,7 +310,6 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "LinkedIn", href: "https://www.linkedin.com/in/aminbilal/" },
     { text: "GitHub", href: "https://github.com/Astavicious" },
     { text: "LeetCode", href: "https://leetcode.com/u/write2bilalamin/" },
-    { text: "Email", href: `mailto:${SITE_CONTENT.hero.email}` },
   ],
   canonicalURL: "https://bilal-amin-portfolio-eight.vercel.app/",
 };
