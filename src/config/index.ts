@@ -8,7 +8,7 @@ export const SITE_CONTENT: SiteContent = {
       "MSc Data Science & AI student at Saarland University, Research Assistant in Software Engineering and Web Development HiWi at EuroComCenter, interested in AI-assisted software engineering, HCI and web development.",
     email: "write2bilalamin@gmail.com",
     location: "Saarbrücken, Germany",
-    resumeUrl: "/Bilal-Amin-CV.pdf",
+    resumeUrl: "/api/cv",
   },
 
   education: [
