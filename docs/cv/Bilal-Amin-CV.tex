@@ -11,7 +11,9 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
+\definecolor{CVLink}{RGB}{30,86,156}
+\hypersetup{colorlinks=true, urlcolor=CVLink, linkcolor=CVLink}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
@@ -52,18 +54,18 @@
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{0pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -79,11 +81,11 @@
 }
 
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+  \begin{itemize}[itemsep=1.5pt, parsep=0pt, topsep=3pt, partopsep=0pt]
 }
 
 \newcommand{\resumeItemListEnd}{
-  \end{itemize}\vspace{-5pt}
+  \end{itemize}\vspace{-2pt}
 }
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -126,6 +128,48 @@ intelligent software systems, and building data-driven products
 from prototype to deployment.
 }
 
+
+%-----------EDUCATION-----------
+\section{Education}
+
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {Universität des Saarlandes}
+  {Apr. 2024 -- Present}
+  {Master's degree, Data Science and AI -- Grade: 1.9}
+  {Saarbrücken, Germany}
+
+
+\vspace{4pt}
+\resumeSubheading
+  {University of Bergen -- Erasmus+ Exchange Semester}
+  {Jan. 2026 -- Jun. 2026}
+  {Exchange Student, Computer Science}
+  {Bergen, Norway}
+
+
+\vspace{4pt}
+\resumeSubheading
+  {National University of Sciences \& Technology}
+  {Sep. 2019 -- Sep. 2023}
+  {Bachelor's in Mechatronics Engineering (Computer Science) -- Grade: 1.7}
+  {Islamabad, Pakistan}
+
+\resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills and Interests}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Programming}: Python, JavaScript, TypeScript, SQL, HTML, CSS, C++, C\#, Java, Rust, Dafny \\[2pt]
+\textbf{Machine Learning \& AI}: Scikit-Learn, PyTorch, TensorFlow, Hugging Face, LLMs, RAG, Prompt Engineering \\[2pt]
+\textbf{LLM \& Web Frameworks}: LangChain, LangGraph, Ollama, ChromaDB, Codex SDK, FastAPI, Flask, Streamlit, React \\[2pt]
+\textbf{Data \& Tools}: Pandas, NumPy, Matplotlib, Git, GitHub Actions, Playwright, Docker, Jupyter, Power BI, Tableau, Figma \\[2pt]
+\textbf{Interests}: Agentic AI, LLM Tool Calling, AI-Assisted Software Engineering, Browser and Workflow Automation
+}}
+\end{itemize}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
@@ -218,6 +262,12 @@ from prototype to deployment.
 \resumeItemListEnd
 
 
+\resumeSubHeadingListEnd
+
+\newpage
+\section{Experience (continued)}
+\resumeSubHeadingListStart
+
 \resumeSubheading
   {Data Analyst}
   {Oct. 2023 -- Mar. 2024}
@@ -227,9 +277,7 @@ from prototype to deployment.
 \resumeItemListStart
 
   \resumeItem{
-    Completed structured training in programming, data science,
-    and business analytics, applying C, Python, and SQL through
-    hands-on assignments and mentor evaluations.
+    Completed hands-on training in programming, data science, and business analytics using C, Python, and SQL, with mentor evaluations.
   }
 
   \resumeItem{
@@ -244,9 +292,7 @@ from prototype to deployment.
   }
 
   \resumeItem{
-    Built a business-focused Dognition analytics dashboard and gained
-    practical exposure to dimensional modeling, ETL concepts,
-    SQL optimization, and Agile/Scrum workflows.
+    Built a Dognition analytics dashboard; gained exposure to dimensional modeling, ETL, SQL optimization, and Agile/Scrum workflows.
   }
 
 \resumeItemListEnd
@@ -261,14 +307,11 @@ from prototype to deployment.
 \resumeItemListStart
 
   \resumeItem{
-    Built or significantly modified 18 responsive UI pages/components
-    using HTML, CSS, and JavaScript for web-based healthcare software.
+    Built or updated 18 responsive healthcare UI pages/components using HTML, CSS, and JavaScript.
   }
 
   \resumeItem{
-    Implemented approximately 6 .NET API endpoints to support
-    application data exchange, backend integration,
-    and internal tool development.
+    Implemented approximately 6 .NET API endpoints for data exchange, backend integration, and internal tools.
   }
 
 \resumeItemListEnd
@@ -283,44 +326,14 @@ from prototype to deployment.
 \resumeItemListStart
 
   \resumeItem{
-    Led 18 hands-on Scratch programming workshops -- 6 larger and
-    12 smaller sessions -- typically serving groups of 50--70 students.
+    Led 18 Scratch workshops (6 larger and 12 smaller sessions), typically serving groups of 50--70 students.
   }
 
   \resumeItem{
-    Created beginner-friendly educational material and practical activities
-    to make programming and STEM concepts accessible to young learners.
+    Created beginner-friendly materials and practical activities introducing programming and STEM to young learners.
   }
 
 \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-
-%-----------EDUCATION-----------
-\section{Education}
-
-\resumeSubHeadingListStart
-
-\resumeSubheading
-  {Universität des Saarlandes}
-  {Apr. 2024 -- Present}
-  {Master's degree, Data Science and AI -- Grade: 1.9}
-  {Saarbrücken, Germany}
-
-
-\resumeSubheading
-  {University of Bergen -- Erasmus+ Exchange Semester}
-  {Jan. 2026 -- Jun. 2026}
-  {Exchange Student, Computer Science}
-  {Bergen, Norway}
-
-
-\resumeSubheading
-  {National University of Sciences \& Technology}
-  {Sep. 2019 -- Sep. 2023}
-  {Bachelor's in Mechatronics Engineering (Computer Science) -- Grade: 1.7}
-  {Islamabad, Pakistan}
 
 \resumeSubHeadingListEnd
 
@@ -378,18 +391,6 @@ from prototype to deployment.
 \resumeItemListEnd
 \resumeSubHeadingListEnd
 \small{\textbf{Additional projects:} Smart StudyDesk~\href{https://github.com/Astavicious/Projects/tree/main/SmartStudyDesk}{$\nearrow$} (2025) -- study organizer with usability testing; SoloScale (Side Hustle Launchpad)~\href{https://github.com/Jumeconscious2/soloscale-demo}{$\nearrow$} (2025) -- FastAPI/MongoDB application at the Tech4Europe Hackathon, KIT; MarketPulse~\href{https://marketpulsehelp.wixsite.com/marketpulse-1}{$\nearrow$} (2024) -- responsive website and HCI analysis.}
-
-%-----------TECHNICAL SKILLS-----------
-\section{Technical Skills and Interests}
-\begin{itemize}[leftmargin=0.15in, label={}]
-\small{\item{
-\textbf{Programming}: Python, JavaScript, TypeScript, SQL, HTML, CSS, C++, C\#, Java, Rust, Dafny \\
-\textbf{Machine Learning \& AI}: Scikit-Learn, PyTorch, TensorFlow, Hugging Face, LLMs, RAG, Prompt Engineering \\
-\textbf{LLM \& Web Frameworks}: LangChain, LangGraph, Ollama, ChromaDB, Codex SDK, FastAPI, Flask, Streamlit, React \\
-\textbf{Data \& Tools}: Pandas, NumPy, Matplotlib, Git, GitHub Actions, Playwright, Docker, Jupyter, Power BI, Tableau, Figma \\
-\textbf{Interests}: Agentic AI, LLM Tool Calling, AI-Assisted Software Engineering, Browser and Workflow Automation
-}}
-\end{itemize}
 
 \section{Selected Coursework and Certifications}
 \begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt]
