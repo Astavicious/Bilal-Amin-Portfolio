@@ -15,6 +15,8 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \input{glyphtounicode}
 
 \pagestyle{fancy}
@@ -89,125 +91,323 @@
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-------------------------------------------
 
-
 \setlength{\footskip}{5pt}
-\newcommand{\resumeEducation}[5]{
-\vspace{-2pt}\item
-\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-\textbf{#1} & #2 \\
-\textit{\small #3} & \textit{\small #4} \\
-\multicolumn{2}{l}{\textit{\small #5}}
-\end{tabular*}\vspace{-4pt}
-}
 \begin{document}
+
+%----------HEADING----------
 \begin{center}
-\textbf{\Huge Bilal Amin} \\ \vspace{1pt}
-\small +49 176 86534249 $|$ \href{mailto:write2bilalamin@gmail.com}{Email} $|$ \href{https://linkedin.com/in/aminbilal/}{LinkedIn} $|$ \href{https://github.com/Astavicious}{GitHub} $|$ \href{https://bilal-amin-portfolio-eight.vercel.app}{Portfolio} $|$ Saarbrücken, Germany
+    \textbf{\Huge Bilal Amin} \\ \vspace{1pt}
+
+    \small
+    +49 176 86534249
+    $|$
+    \href{mailto:write2bilalamin@gmail.com}
+    {write2bilalamin@gmail.com}
+    $|$
+    \href{https://linkedin.com/in/aminbilal/}
+    {linkedin.com/in/aminbilal}
+    \\
+    \href{https://github.com/Astavicious}
+    {github.com/Astavicious}
+    $|$
+    \href{https://bilal-amin-portfolio-eight.vercel.app}
+    {bilal-amin-portfolio-eight.vercel.app}
+    $|$
+    Saarbrücken, Germany
 \end{center}
-\small{MSc Data Science and AI student at Saarland University, with current HiWi roles in software engineering research and web development. Interested in AI-assisted software engineering, HCI, UI/UX design, and web development.}
-\section{Education}
-\resumeSubHeadingListStart
-\resumeEducation{Universität des Saarlandes}{Apr. 2024 -- Present}{Master's degree, Data Science and AI}{Saarbrücken, Germany}{Grade: 1.9 (German grading system)}
-\resumeSubheading{University of Bergen (Erasmus+ Exchange Semester)}{Jan. 2026 -- Jun. 2026}{Exchange Student, Computer Science}{Bergen, Norway}
-\resumeEducation{National University of Sciences \& Technology}{Sep. 2019 -- Sep. 2023}{Bachelor's in Mechatronics Engineering (Computer Science)}{Islamabad, Pakistan}{Grade: 1.7 (German grading system)}
-\resumeSubHeadingListEnd
+
+
+%-----------PROFILE-----------
+\section{Profile}
+
+\small{
+Master's student in Data Science and AI with a background in mechatronics
+and hands-on experience spanning network simulation, data analysis,
+web development, and LLM applications. Interested in applied AI,
+intelligent software systems, and building data-driven products
+from prototype to deployment.
+}
+
+
+%-----------EXPERIENCE-----------
 \section{Experience}
+
 \resumeSubHeadingListStart
-\resumeSubheading{Research Assistant (HiWi) -- Software Engineering}{Oct. 2026 -- Present}{Chair of Software Engineering, Saarland University}{Saarbrücken, Germany}
+
+\resumeSubheading
+  {Research Assistant (HiWi) -- Software Engineering}
+  { Oct. 2026 -- Present}
+  {Chair of Software Engineering, Saarland University}
+  {Saarbrücken, Germany}
+
 \resumeItemListStart
-\resumeItem{Work with Qingqing Dong on AI-assisted software engineering and model-driven systems engineering research.}
-\resumeItem{Research focus includes model merging, semantic merge-conflict detection, and feature-based merge recommendations.}
-\resumeItem{Support research on software evolution and intelligent methods for software and model-based systems.}
+
+  \resumeItem{
+    Work directly with Qingqing Dong on AI-assisted software engineering
+    and model-driven system engineering research.
+  }
+
+  \resumeItem{
+    Research focus includes investigating AI-assisted model merging,
+    semantic merge-conflict detection, and feature-based merge recommendations.
+  }
+
+  \resumeItem{
+    Support research on software evolution and intelligent methods
+    for improving complex software and model-based systems.
+  }
+
 \resumeItemListEnd
-\resumeSubheading{Student Assistant (HiWi) -- Web Development}{Sep. 2026 -- Present}{EuroComCenter, Saarland University}{Saarbrücken, Germany}
+
+
+\resumeSubheading
+  {Student Assistant (HiWi) -- Web Development}
+  {Sep. 2026 -- Present}
+  {EuroComCenter, Saarland University}
+  {Saarbrücken, Germany}
+
 \resumeItemListStart
-\resumeItem{Maintain and improve the EuroComCenter web platform, focusing on usability, multilingual content, and website structure.}
-\resumeItem{Review the existing implementation, fix technical and user-interface issues, and manage CMS-based content and digital media.}
-\resumeItem{Work with the project team to translate requirements into practical technical and design improvements.}
+
+  \resumeItem{
+    Maintain and improve a multilingual learning platform covering
+    6 Romance languages and structured around the 7-Sieves
+    intercomprehension methodology.
+  }
+
+  \resumeItem{
+    Reviewed and updated 10+ CMS-managed pages and content items,
+    resolving technical, layout, and user-interface issues across the platform.
+  }
+
+  \resumeItem{
+    Translate project requirements into practical improvements to navigation,
+    content structure, usability, and multilingual presentation.
+  }
+
 \resumeItemListEnd
-\resumeSubheading{Working Student -- Internet Architecture Group}{Oct. 2024 -- Mar. 2025}{Max Planck Institute for Informatics (MPI)}{Saarbrücken, Germany}
+
+
+\resumeSubheading
+  {Working Student -- Internet Architecture Group}
+  {Oct. 2024 -- Mar. 2025}
+  {Max Planck Institute for Informatics (MPI)}
+  {Saarbrücken, Germany}
+
 \resumeItemListStart
-\resumeItem{Designed an automated framework to evaluate congestion control algorithms in NS-3 (Network Simulator).}
-\resumeItem{Created a user-friendly dashboard to visualize performance metrics under different network conditions.}
-\resumeItem{Developed system tests and metrics for performance evaluation across varied scenarios.}
-\resumeItem{Analyzed simulation results to identify optimization opportunities and guide design decisions.}
+
+  \resumeItem{
+    Designed an automated NS-3 evaluation framework comparing
+    5 congestion-control algorithms across 10 network scenarios each,
+    covering 50 algorithm-scenario evaluations.
+  }
+
+  \resumeItem{
+    Built a dashboard visualizing 4 key metrics -- throughput,
+    RTT/latency, packet loss, and congestion window --
+    across experiment configurations.
+  }
+
+  \resumeItem{
+    Developed 5 automated system tests and reusable evaluation logic
+    to support repeatable performance experiments.
+  }
+
+  \resumeItem{
+    Analyzed simulation results to identify algorithm-specific behavior
+    and guide experiment and design decisions.
+  }
+
 \resumeItemListEnd
-\resumeSubheading{Data Analyst}{Oct. 2023 -- Mar. 2024}{Convergent Business Technologies}{Islamabad, Pakistan}
+
+
+\resumeSubheading
+  {Data Analyst}
+  {Oct. 2023 -- Mar. 2024}
+  {Convergent Business Technologies}
+  {Islamabad, Pakistan}
+
 \resumeItemListStart
-\resumeItem{Developed reproducible data science workflows using Python and SQL to manipulate and analyze data.}
-\resumeItem{As part of training, completed the CS50 course and created several dashboards related to the coursework.}
+
+  \resumeItem{
+    Completed structured training in programming, data science,
+    and business analytics, applying C, Python, and SQL through
+    hands-on assignments and mentor evaluations.
+  }
+
+  \resumeItem{
+    Built 5 Tableau/Power BI dashboards and presented analytical findings
+    to technical and business stakeholders in simulated client settings.
+  }
+
+  \resumeItem{
+    Delivered an end-to-end Employee Attrition Prediction capstone
+    using approximately 600 employee records, covering data preparation,
+    modeling, evaluation, and presentation.
+  }
+
+  \resumeItem{
+    Built a business-focused Dognition analytics dashboard and gained
+    practical exposure to dimensional modeling, ETL concepts,
+    SQL optimization, and Agile/Scrum workflows.
+  }
+
 \resumeItemListEnd
-\resumeSubheading{Web Development Intern}{Jun. 2023 -- Aug. 2023}{CureMD}{Lahore, Pakistan}
+
+
+\resumeSubheading
+  {Web Development Intern}
+  {Jun. 2023 -- Aug. 2023}
+  {CureMD}
+  {Lahore, Pakistan}
+
 \resumeItemListStart
-\resumeItem{Designed user interfaces using HTML, CSS, and JavaScript, improving usability and accessibility for end users.}
-\resumeItem{Developed APIs in the .NET framework, enhancing data integration and tool development.}
+
+  \resumeItem{
+    Built or significantly modified 18 responsive UI pages/components
+    using HTML, CSS, and JavaScript for web-based healthcare software.
+  }
+
+  \resumeItem{
+    Implemented approximately 6 .NET API endpoints to support
+    application data exchange, backend integration,
+    and internal tool development.
+  }
+
 \resumeItemListEnd
-\resumeSubheading{Technical Intern}{Aug. 2021 -- Oct. 2021}{STEP (Space Technology Education and Popularization)}{Islamabad, Pakistan}
+
+
+\resumeSubheading
+  {Technical Intern}
+  {Aug. 2021 -- Oct. 2021}
+  {STEP (Space Technology Education and Popularization)}
+  {Islamabad, Pakistan}
+
 \resumeItemListStart
-\resumeItem{Led workshops teaching programming fundamentals using Scratch, focusing on hands-on learning for underprivileged youth.}
-\resumeItem{Created educational materials to simplify complex technology concepts, fostering interest in STEM fields.}
+
+  \resumeItem{
+    Led 18 hands-on Scratch programming workshops -- 6 larger and
+    12 smaller sessions -- typically serving groups of 50--70 students.
+  }
+
+  \resumeItem{
+    Created beginner-friendly educational material and practical activities
+    to make programming and STEM concepts accessible to young learners.
+  }
+
 \resumeItemListEnd
+
 \resumeSubHeadingListEnd
-\newpage
-\renewcommand{\resumeItem}[1]{\item{\fontsize{9}{11.2}\selectfont #1\vspace{-2pt}}}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {Universität des Saarlandes}
+  {Apr. 2024 -- Present}
+  {Master's degree, Data Science and AI -- Grade: 1.9}
+  {Saarbrücken, Germany}
+
+
+\resumeSubheading
+  {University of Bergen -- Erasmus+ Exchange Semester}
+  {Jan. 2026 -- Jun. 2026}
+  {Exchange Student, Computer Science}
+  {Bergen, Norway}
+
+
+\resumeSubheading
+  {National University of Sciences \& Technology}
+  {Sep. 2019 -- Sep. 2023}
+  {Bachelor's in Mechatronics Engineering (Computer Science) -- Grade: 1.7}
+  {Islamabad, Pakistan}
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
 \section{Projects}
 \resumeSubHeadingListStart
+\resumeProjectHeading{\href{https://github.com/Astavicious/musedots-rfq-agent}{\textbf{Musedots RFQ Agent -- Atira EHL Grand Finale}}}{Oct. 2026}
+\resumeItemListStart
+\resumeItem{Implemented the complete autonomous agent using Python, Qwen, and Playwright to investigate industrial tenders across four websites, match materials, calculate prices, and submit TAN-signed bids.}
+\resumeItem{Built browser tools, persistent source evidence, Decimal pricing helpers, and validation checks comparing the displayed bid against the validated candidate.}
+\resumeItem{Team musedots placed sixth in the private final evaluation with 100/100 quality and a 4:25 runtime; selected among the top seven teams for the finale pitch meeting.}
+\resumeItemListEnd
 \resumeProjectHeading{\textbf{AI-Assisted Dafny Code Generation and Verification}}{2026}
 \resumeItemListStart
 \resumeItem{Built a Python/Codex pipeline that generates Dafny from English requirements and uses verifier feedback for up to two repairs.}
-\resumeItem{Evaluated Bounded Counter, Authorized Access, and Account Transfer with two prompt profiles: four of six runs verified initially; all six verified within three attempts. The profiles tied in this small experiment.}
-\resumeItem{Separately reviewed requirement coverage; formal verification checks written contracts rather than English-to-specification faithfulness.}
+\resumeItem{Compared two prompt profiles across three scenarios: all six runs verified within three attempts. Profiles tied in this small experiment; requirement coverage was reviewed separately from formal verification.}
 \resumeItemListEnd
-\resumeProjectHeading{\textbf{GermanLyft -- AI-Powered German Learning Platform}}{2026}
+
+
+\resumeProjectHeading
+  {\textbf{GermanLyft -- AI-Powered German Learning Platform}}
+  {2026}
+
 \resumeItemListStart
-\resumeItem{Developed a full-stack German-learning platform using React, TypeScript, Flask, and the Groq LLM API, mainly for CEFR A1--A2 learners.}
-\resumeItem{Built an interactive AI tutor for grammar explanations, sentence correction, vocabulary practice, conversational learning, and dynamically generated exercises.}
-\resumeItem{Implemented placement tests, quizzes, user accounts, profiles, and Anki .apkg deck importing using a REST-based React/Flask architecture.}
-\resumeItem{Deployed the frontend on Vercel and the backend on Render.}
+
+  \resumeItem{
+    Developed a full-stack German-learning platform for
+    2 primary CEFR levels (A1--A2) using React, TypeScript, and Flask.
+  }
+
+  \resumeItem{
+    Implemented 5 major user-facing features: placement tests,
+    quizzes, user accounts, profiles, and Anki \texttt{.apkg} deck importing.
+  }
+
+  \resumeItem{
+    Built 4 exercise formats -- multiple choice, fill-in-the-blank,
+    sentence correction, and vocabulary matching --
+    exposed through approximately 3 backend API endpoints.
+  }
+
+  \resumeItem{
+    Tested the platform with 3 users and deployed the frontend on Vercel
+    and backend on Render as 2 independently hosted services.
+  }
+
 \resumeItemListEnd
-\resumeProjectHeading{\textbf{AI Learning Assistant using LLMs (RAG)}}{2025}
+
+\resumeProjectHeading
+  {\textbf{AI Learning Assistant using LLMs (RAG)}}
+  {2025}
+
 \resumeItemListStart
-\resumeItem{Built an AI-powered learning assistant using Python, LangChain, Streamlit, and FastAPI.}
-\resumeItem{Integrated a locally hosted Llama model with Retrieval-Augmented Generation to answer questions from uploaded PDF documents.}
-\resumeItem{Implemented document processing, vector embeddings, ChromaDB, and citation-based responses.}
-\resumeItem{Added features to generate summaries, quizzes, and study materials from course documents.}
-\resumeItemListEnd
-\resumeProjectHeading{\textbf{Smart StudyDesk: AI-Powered Study Organizer}}{2024}
-\resumeItemListStart
-\resumeItem{Designed a cross-platform study application for organizing, summarizing, and reviewing lecture materials.}
-\resumeItem{Added AI-based note summaries, personalized quizzes, progress tracking, and weak-area analysis.}
-\resumeItem{Conducted usability testing using semi-structured interviews and NASA-TLX workload analysis.}
-\resumeItem{Improved the interface based on user feedback, with clearer navigation, folder organization, and feedback visibility.}
-\resumeItemListEnd
-\resumeProjectHeading{\textbf{MarketPulse Website Design and HCI Analysis}}{2024}
-\resumeItemListStart
-\resumeItem{Designed and developed a responsive website for MarketPulse using HTML, CSS, and JavaScript.}
-\resumeItem{Applied HCI principles including consistency, simplicity, feedback, visibility, constraints, and accessibility.}
-\resumeItem{Improved the information structure and user interaction through usability-focused design.}
-\resumeItemListEnd
-\resumeProjectHeading{\textbf{Side Hustle Launchpad -- Tech4Europe Hackathon, KIT}}{2024}
-\resumeItemListStart
-\resumeItem{Developed a full-stack web application during the Tech4Europe Hackathon at Karlsruhe Institute of Technology, Germany.}
-\resumeItem{Built analytics dashboards and personalized recommendations to support small-business planning.}
-\resumeItem{Used FastAPI and MongoDB for backend development and data management.}
+
+  \resumeItem{
+    Built an AI learning assistant with Python, LangChain,
+    Streamlit, and FastAPI using a locally hosted Llama model.
+  }
+
+  \resumeItem{Tested retrieval across 25 Functional Programming documents (13 lectures and 12 worksheets), with 12+ questions per document and 300+ question-document interactions.}
+
+  \resumeItem{
+    Implemented PDF processing, vector embeddings, ChromaDB retrieval,
+    citation-based answers, summaries, quizzes,
+    and study-material generation.
+  }
+
 \resumeItemListEnd
 \resumeSubHeadingListEnd
-\section{MOOCs and Relevant Coursework}
-\resumeItemListStart
-\resumeItem{Saarland University: Data Networks, Neural Networks: Theory and Implementation, Elements of Machine Learning, Human Computer Interaction, High-Level Computer Vision, Generative AI, Machine Translation, Attacks Against Machine Learning Models, and Competitive Programming.}
-\resumeItem{University of Bergen: Functional Programming, Qualitative Analysis, and Philosophy of AI.}
-\resumeItem{Certifications: Machine Learning Specialization -- DeepLearning.AI and Stanford Online; CS50's Introduction to Artificial Intelligence with Python -- Harvard University; Google Data Analytics Professional Certificate -- Google; Python for Data Science, AI \& Development -- IBM.}
-\resumeItemListEnd
+\small{\textbf{Additional projects:} Smart StudyDesk (2025) -- study organizer with usability testing; Side Hustle Launchpad (2025) -- FastAPI/MongoDB application at the Tech4Europe Hackathon, KIT; MarketPulse (2024) -- responsive website and HCI analysis.}
+
+%-----------TECHNICAL SKILLS-----------
 \section{Technical Skills and Interests}
 \begin{itemize}[leftmargin=0.15in, label={}]
-\item{\fontsize{9}{11.2}\selectfont
-\textbf{Programming}: Python, JavaScript, TypeScript, SQL, HTML, CSS, C++, C\#, Java, Dafny \\
-\textbf{Machine Learning \& AI}: Scikit-Learn, PyTorch, TensorFlow, Hugging Face Transformers, Large Language Models (LLMs), Prompt Engineering, Retrieval-Augmented Generation (RAG) \\
-\textbf{LLM Frameworks}: LangChain, LangGraph, Ollama, ChromaDB, Codex SDK \\
-\textbf{Web Frameworks}: FastAPI, Flask, Streamlit, ReactJS \\
-\textbf{Libraries \& Data}: Pandas, NumPy, PySpark, Matplotlib \\
-\textbf{Tools \& Platforms}: Git, GitHub Actions, Docker, Microsoft Azure, VS Code, Jupyter, Power BI, Tableau, Figma \\
-\textbf{Interests}: LLM Applications, Agentic AI, AI-Assisted Software Engineering, Data Engineering, Workflow Automation, HCI, UI/UX Design
-}
+\small{\item{
+\textbf{Programming}: Python, JavaScript, TypeScript, SQL, HTML, CSS, C++, C\#, Java, Rust, Dafny \\
+\textbf{Machine Learning \& AI}: Scikit-Learn, PyTorch, TensorFlow, Hugging Face, LLMs, RAG, Prompt Engineering \\
+\textbf{LLM \& Web Frameworks}: LangChain, LangGraph, Ollama, ChromaDB, Codex SDK, FastAPI, Flask, Streamlit, React \\
+\textbf{Data \& Tools}: Pandas, NumPy, Matplotlib, Git, GitHub Actions, Playwright, Docker, Jupyter, Power BI, Tableau, Figma \\
+\textbf{Interests}: Agentic AI, LLM Tool Calling, AI-Assisted Software Engineering, Browser and Workflow Automation
+}}
 \end{itemize}
+
+\section{Selected Coursework and Certifications}
+\small{Generative AI, Neural Networks, Machine Learning, HCI, Computer Vision, Data Networks, Functional Programming, and Philosophy of AI. Certifications: Machine Learning Specialization (DeepLearning.AI/Stanford); CS50 AI with Python (Harvard); Python for Data Science, AI \& Development (IBM); Google Data Analytics Professional Certificate (in progress).}
+%-------------------------------------------
 \end{document}

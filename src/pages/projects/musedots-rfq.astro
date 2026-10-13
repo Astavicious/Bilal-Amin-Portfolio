@@ -1,0 +1,104 @@
+---
+import Layout from "@layouts/Layout.astro";
+const title = "Musedots RFQ Agent";
+const repository = "https://github.com/Astavicious/musedots-rfq-agent";
+const results = "https://ehl-challenge.atira.ai/challenges/rfq#leaderboard";
+---
+
+<Layout
+  title={`${title} — Bilal Amin`}
+  description="An autonomous industrial tender agent implemented by Bilal Amin. Team musedots placed sixth with 100/100 quality and qualified among seven teams for the finale pitch meeting."
+>
+  <article class="case-study py-10 text-white sm:py-16">
+    <a href="/#projects" class="text-sm text-neutral underline underline-offset-4">← All projects</a>
+    <p class="mt-10 text-sm text-neutral">Atira · European Hackathon League Grand Finale · October 2026</p>
+    <h1 class="mt-4 font-serif text-4xl leading-tight sm:text-5xl">{title}</h1>
+    <p class="mt-6 text-neutral">
+      I implemented the complete agent that investigates an industrial tender,
+      matches materials, calculates prices, and submits a reviewed, TAN-signed bid.
+      Competing as musedots, our team placed sixth in the private final evaluation
+      and was selected among the top seven teams for the finale pitch meeting.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-5 text-sm">
+      <a href={repository} target="_blank" rel="noreferrer" class="underline underline-offset-4">GitHub ↗</a>
+      <a href="/musedots-rfq-slides.pdf" target="_blank" rel="noreferrer" class="underline underline-offset-4">View slides ↗</a>
+      <a href="/musedots-rfq-slides.pptx" download class="underline underline-offset-4">Download PowerPoint</a>
+      <a href={results} target="_blank" rel="noreferrer" class="underline underline-offset-4">Official results ↗</a>
+    </div>
+
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Competition result</h2>
+      <dl class="grid gap-6 sm:grid-cols-3">
+        <div><dt class="text-sm text-neutral">Private final placement</dt><dd class="mt-2 text-4xl text-primary">6th</dd></div>
+        <div><dt class="text-sm text-neutral">Quality score</dt><dd class="mt-2 text-4xl text-primary">100/100</dd></div>
+        <div><dt class="text-sm text-neutral">Listed final runtime</dt><dd class="mt-2 text-4xl text-primary">4:25</dd></div>
+      </dl>
+      <p>Selected among the top seven teams for the finale pitch meeting. The private-final result is separate from the public-dataset rank of eighteenth.</p>
+      <p class="text-sm">The platform reported $0.2483 in model cost for the listed final result. These are hackathon benchmark results, rather than a claim of general production accuracy or business savings.</p>
+    </section>
+
+    <section>
+      <h2>The problem</h2>
+      <p>A hydraulic-cylinder bid depends on evidence spread across four websites. The agent has to reconcile current requirements and commercial terms before signing a bid.</p>
+      <ul>
+        <li><strong>Tender portal:</strong> positions, quantities, clarifications, and the bid form.</li>
+        <li><strong>Supplier portal:</strong> technical specifications and document revisions.</li>
+        <li><strong>Company ERP:</strong> materials, usable inventory, lead times, and price conditions.</li>
+        <li><strong>Webmail:</strong> commercial approvals and the signing TAN.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>My implementation</h2>
+      <p>I built the Python controller, Qwen tool loop, Playwright browser tools, calculation helpers, persistent source evidence, and validation guards. The implementation is my contribution; the competition result belongs to team musedots.</p>
+      <p>Qwen selects navigation targets, relevant evidence, materials, and business decisions. Python executes the selected actions and checks the resulting bid. One controller coordinates the model loop; the submission requests four browser sessions.</p>
+      <figure>
+        <a href="/musedots-architecture.png" target="_blank" rel="noreferrer" aria-label="Open full-size Musedots architecture diagram">
+          <img src="/musedots-architecture.png" width="2560" height="1440" alt="Qwen exchanges tool calls and results with the Python controller. The controller retains source evidence, invokes Decimal helpers, and coordinates bid review and signing." class="w-full rounded-xl" loading="lazy" />
+        </a>
+        <figcaption>Architecture from the project presentation. Text and connectors remain editable in the PowerPoint.</figcaption>
+      </figure>
+      <p class="text-sm">Python · Qwen · Playwright · Decimal · JSON Schema · uv</p>
+    </section>
+
+    <section>
+      <h2>Workflow and validation</h2>
+      <figure>
+        <a href="/musedots-workflow.svg" target="_blank" rel="noreferrer" aria-label="Open full-size Musedots workflow flowchart">
+          <img src="/musedots-workflow.svg" width="1200" height="1500" alt="Runtime setup leads to investigation, evidence capture, calculations, candidate validation, portal review, TAN signing, and receipt confirmation. Failed checks loop back to investigation or correction." class="w-full rounded-xl bg-white" loading="lazy" />
+        </a>
+        <figcaption>Open the flowchart at full size, or read the editable Mermaid version on <a href={`${repository}/blob/main/FLOWCHART.md`} target="_blank" rel="noreferrer" class="underline">GitHub</a>.</figcaption>
+      </figure>
+      <ol>
+        <li>Load the runtime brief, schema, and website access.</li>
+        <li>Investigate the tender and preserve source IDs in the notebook.</li>
+        <li>Select source-backed materials and terms, then calculate prices and delivery with Decimal helpers.</li>
+        <li>Validate the candidate against its schema, evidence, formulas, and calculation records.</li>
+        <li>Fill the bid form and compare the actual displayed review against the validated candidate.</li>
+        <li>Retrieve the TAN, sign the reviewed submission, and confirm an accepted receipt.</li>
+      </ol>
+      <p>Invalid candidate updates do not replace the previous validated candidate. Review discrepancies must be corrected before signing. Bounded retries and a submission reserve help the agent recover within its deadline.</p>
+    </section>
+
+    <section>
+      <h2>Results, scope, and current access</h2>
+      <p>The private-final score demonstrates performance on the hackathon benchmark. It does not guarantee that every model decision will be correct on other tenders. The agent can explicitly omit unfinished positions, but unfinished research alone does not justify a no-bid decision.</p>
+      <p>On 13 October 2026, Atira displayed “Submissions and new runs are closed.” The source and presentation are available for review; fresh challenge runs depend on working runtime access from the organizers.</p>
+      <p class="text-sm">Sources: <a href={results} target="_blank" rel="noreferrer" class="underline">official challenge and final leaderboard</a>, the authenticated team dashboard, and the submitted agent source. Finale pitch selection was confirmed by me.</p>
+    </section>
+    <a href="/#projects" class="inline-block py-8 text-sm underline underline-offset-4">← Back to projects</a>
+  </article>
+</Layout>
+
+<style>
+  .case-study section { margin-top: 3rem; }
+  .case-study h2 { font-family: var(--font-serif); font-size: 1.75rem; line-height: 1.3; margin-bottom: 1rem; }
+  .case-study section p { color: var(--color-neutral); margin-top: 1rem; }
+  .case-study ul, .case-study ol { padding-left: 1.5rem; margin-top: 1.25rem; color: var(--color-neutral); }
+  .case-study ul { list-style: disc; }
+  .case-study ol { list-style: decimal; }
+  .case-study li { margin-top: 0.75rem; }
+  .case-study strong { color: white; font-weight: 500; }
+  .case-study figure { margin-top: 1.5rem; }
+  .case-study figcaption { margin-top: 0.75rem; font-size: 0.875rem; color: var(--color-neutral); }
+</style>

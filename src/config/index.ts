@@ -132,6 +132,17 @@ export const SITE_CONTENT: SiteContent = {
 
   projects: [
     {
+      name: "Musedots RFQ Agent — Autonomous Tender Bidding",
+      status: "6th place · Finale pitch selection",
+      summary:
+        "Built the complete industrial tender agent with Python, Qwen, and Playwright: browser investigation, source-backed validation, pricing, and TAN signing. Team musedots scored 100/100 in the private final evaluation and was selected among the top seven teams for the finale pitch meeting.",
+      technologies: ["Python", "Qwen", "Playwright", "LLM Tool Calling", "Decimal"],
+      image: "/musedots-architecture.png",
+      linkCaseStudy: "/projects/musedots-rfq",
+      linkSource: "https://github.com/Astavicious/musedots-rfq-agent",
+      linkSourceLabel: "GitHub",
+    },
+    {
       name: "AI-Assisted Dafny Code Generation and Verification",
       status: "Completed research prototype",
       summary:
@@ -161,7 +172,7 @@ export const SITE_CONTENT: SiteContent = {
         "Groq API",
         "SQLite",
       ],
-      image: "/project-rag.png",
+      image: "/project-germanlyft.png",
       linkSource: "https://github.com/Astavicious/GermanLyft",
       linkSourceLabel: "GitHub",
       linkPreview: "https://german-lyft.vercel.app",
@@ -239,6 +250,8 @@ export const SITE_CONTENT: SiteContent = {
         "Large Language Models",
         "Prompt Engineering",
         "AI-Assisted Software Engineering",
+        "LLM Tool Calling",
+        "Browser Automation",
         "Formal Verification",
         "Retrieval-Augmented Generation",
       ],
@@ -262,7 +275,7 @@ export const SITE_CONTENT: SiteContent = {
     },
     {
       category: "Tools & Platforms",
-      items: ["GitHub", "GitHub Actions", "VS Code", "Figma", "Canva", "Wix"],
+      items: ["GitHub", "GitHub Actions", "Playwright", "VS Code", "Figma", "Canva", "Wix"],
     },
     {
       category: "Selected Coursework",
@@ -278,7 +291,18 @@ export const SITE_CONTENT: SiteContent = {
     },
   ],
 
-  hackathons: [],
+  hackathons: [
+    {
+      name: "Atira — EHL Grand Finale 2026",
+      location: "Munich, Germany · October 2026",
+      rank: "6th in private evaluation",
+      summary:
+        "Competing as musedots, achieved 100/100 quality with a listed final runtime of 4:25. Selected among the top seven teams for the finale pitch meeting. I implemented the complete RFQ agent; the competition result belongs to team musedots.",
+      images: ["/musedots-results.png"],
+      link: "https://github.com/Astavicious/musedots-rfq-agent",
+      preview: "/projects/musedots-rfq",
+    },
+  ],
 
   about: {
     description: `
@@ -301,6 +325,7 @@ export const SITE_CONFIG: SiteConfig = {
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
+    { text: "Hackathons", href: "#hackathons" },
     { text: "Education", href: "#education" },
     { text: "Skills", href: "#skills" },
     { text: "About", href: "#about" },
