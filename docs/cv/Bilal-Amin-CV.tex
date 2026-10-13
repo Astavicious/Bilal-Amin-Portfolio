@@ -48,9 +48,7 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item{\small #1\par}
 }
 
 \newcommand{\resumeSubheading}[4]{
@@ -81,7 +79,7 @@
 }
 
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}
+  \begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
 }
 
 \newcommand{\resumeItemListEnd}{
@@ -330,13 +328,12 @@ from prototype to deployment.
 %-----------PROJECTS-----------
 \section{Projects}
 \resumeSubHeadingListStart
-\resumeProjectHeading{\href{https://github.com/Astavicious/musedots-rfq-agent}{\textbf{Musedots RFQ Agent -- Atira EHL Grand Finale}}}{Oct. 2026}
+\resumeProjectHeading{\textbf{Musedots RFQ Agent -- Atira EHL Grand Finale}~\href{https://github.com/Astavicious/musedots-rfq-agent}{$\nearrow$}}{Oct. 2026}
 \resumeItemListStart
-\resumeItem{Implemented the complete autonomous agent using Python, Qwen, and Playwright to investigate industrial tenders across four websites, match materials, calculate prices, and submit TAN-signed bids.}
-\resumeItem{Built browser tools, persistent source evidence, Decimal pricing helpers, and validation checks comparing the displayed bid against the validated candidate.}
+\resumeItem{Built a Python/Qwen/Playwright agent to investigate industrial tenders across four websites, match materials, calculate prices with Decimal, and validate and submit TAN-signed bids.}
 \resumeItem{Team musedots placed sixth in the private final evaluation with 100/100 quality and a 4:25 runtime; selected among the top seven teams for the finale pitch meeting.}
 \resumeItemListEnd
-\resumeProjectHeading{\href{https://github.com/Astavicious/Entry-Task}{\textbf{AI-Assisted Dafny Code Generation and Verification}}}{2026}
+\resumeProjectHeading{\textbf{AI-Assisted Dafny Code Generation and Verification}~\href{https://github.com/Astavicious/Entry-Task}{$\nearrow$}}{2026}
 \resumeItemListStart
 \resumeItem{Built a Python/Codex pipeline that generates Dafny from English requirements and uses verifier feedback for up to two repairs.}
 \resumeItem{Compared two prompt profiles across three scenarios: all six runs verified within three attempts. Profiles tied in this small experiment; requirement coverage was reviewed separately from formal verification.}
@@ -344,19 +341,13 @@ from prototype to deployment.
 
 
 \resumeProjectHeading
-  {\href{https://github.com/Astavicious/GermanLyft}{\textbf{GermanLyft -- AI-Powered German Learning Platform}}}
+  {\textbf{GermanLyft -- AI-Powered German Learning Platform}~\href{https://github.com/Astavicious/GermanLyft}{$\nearrow$}}
   {2026}
 
 \resumeItemListStart
 
   \resumeItem{
-    Developed a full-stack German-learning platform for
-    2 primary CEFR levels (A1--A2) using React, TypeScript, and Flask.
-  }
-
-  \resumeItem{
-    Implemented 5 major user-facing features: placement tests,
-    quizzes, user accounts, profiles, and Anki \texttt{.apkg} deck importing.
+    Developed a full-stack German-learning platform for CEFR A1--A2 using React, TypeScript, and Flask, with placement tests, quizzes, accounts, profiles, and Anki \texttt{.apkg} importing.
   }
 
   \resumeItem{
@@ -379,21 +370,14 @@ from prototype to deployment.
 \resumeItemListStart
 
   \resumeItem{
-    Built an AI learning assistant with Python, LangChain,
-    Streamlit, and FastAPI using a locally hosted Llama model.
+    Built a local PDF learning assistant with Python, LangChain, Streamlit, FastAPI, Llama, and ChromaDB, offering citation-based answers, summaries, quizzes, and study materials.
   }
 
   \resumeItem{Tested retrieval across 25 Functional Programming documents (13 lectures and 12 worksheets), with 12+ questions per document and 300+ question-document interactions.}
 
-  \resumeItem{
-    Implemented PDF processing, vector embeddings, ChromaDB retrieval,
-    citation-based answers, summaries, quizzes,
-    and study-material generation.
-  }
-
 \resumeItemListEnd
 \resumeSubHeadingListEnd
-\small{\textbf{Additional projects:} \href{https://github.com/Astavicious/Projects/tree/main/SmartStudyDesk}{Smart StudyDesk} (2025) -- study organizer with usability testing; \href{https://github.com/Jumeconscious2/soloscale-demo}{SoloScale (Side Hustle Launchpad)} (2025) -- FastAPI/MongoDB application at the Tech4Europe Hackathon, KIT; \href{https://marketpulsehelp.wixsite.com/marketpulse-1}{MarketPulse} (2024) -- responsive website and HCI analysis.}
+\small{\textbf{Additional projects:} Smart StudyDesk~\href{https://github.com/Astavicious/Projects/tree/main/SmartStudyDesk}{$\nearrow$} (2025) -- study organizer with usability testing; SoloScale (Side Hustle Launchpad)~\href{https://github.com/Jumeconscious2/soloscale-demo}{$\nearrow$} (2025) -- FastAPI/MongoDB application at the Tech4Europe Hackathon, KIT; MarketPulse~\href{https://marketpulsehelp.wixsite.com/marketpulse-1}{$\nearrow$} (2024) -- responsive website and HCI analysis.}
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills and Interests}
@@ -408,6 +392,10 @@ from prototype to deployment.
 \end{itemize}
 
 \section{Selected Coursework and Certifications}
-\small{Generative AI, Neural Networks, Machine Learning, HCI, Computer Vision, Data Networks, Functional Programming, and Philosophy of AI. Certifications: Machine Learning Specialization (DeepLearning.AI/Stanford); CS50 AI with Python (Harvard); Python for Data Science, AI \& Development (IBM); Google Data Analytics Professional Certificate (in progress).}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt]
+\item{\small \textbf{Saarland University -- MSc:} Generative AI; Neural Networks; Elements of Machine Learning; Human-Computer Interaction; High-Level Computer Vision; Data Networks.}
+\item{\small \textbf{University of Bergen -- Erasmus+:} Functional Programming; Qualitative Analysis; Philosophy of AI.}
+\item{\small \textbf{Certifications:} Machine Learning Specialization (DeepLearning.AI/Stanford); CS50 AI with Python (Harvard); Python for Data Science, AI \& Development (IBM); Google Data Analytics Professional Certificate (in progress).}
+\end{itemize}
 %-------------------------------------------
 \end{document}
